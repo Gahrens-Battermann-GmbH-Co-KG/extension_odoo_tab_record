@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>G+B Feedback — GIF</title>
+</head>
+<body>
+  <!-- Minimale GIF-Status-UI — in editor.html ergänzen falls nicht vorhanden -->
+  <div id="gb-gif-status" style="padding:20px; font-size:16px;">
+    Wird geladen…
+  </div>
+  <div id="gb-gif-warning"
+       style="display:none; padding:12px; background:#fff3cd;
+              border:1px solid #ffc107; margin:10px; border-radius:4px;">
+  </div>
+  <div id="gb-gif-preview-wrap"
+       style="display:none; margin:10px; padding:10px; border:1px solid #ddd; border-radius:6px;">
+    <div style="font-size:13px; margin-bottom:8px; color:#333;">Vorschau (Entwicklung)</div>
+    <img id="gb-gif-preview"
+         alt="GIF Vorschau"
+         style="max-width:100%; height:auto; display:block; border:1px solid #ccc; border-radius:4px;" />
+  </div>
+  <script src="../capture/gif.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

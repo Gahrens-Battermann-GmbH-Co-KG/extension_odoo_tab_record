@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>G+B Feedback Widget</title>
+</head>
+<body style="width: 340px; margin: 0; font-family: Segoe UI, Arial, sans-serif;">
+  <section id="gb-screenshot-section" style="padding: 12px 16px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">Screenshot</div>
+    <div style="font-size: 12px; color: #888;">Bestehende Sektion (Platzhalter)</div>
+  </section>
+
+  <!-- GIF-Recording Sektion -->
+  <section id="gb-gif-section" style="
+    border-top: 1px solid #e0e0e0;
+    padding: 12px 16px;
+    margin-top: 8px;
+  ">
+    <div style="font-weight:600; margin-bottom:8px;">🎬 GIF aufnehmen</div>
+
+    <!-- Bereit-Zustand -->
+    <div id="gb-gif-ready">
+      <label for="gb-gif-tab-select" style="display:block; font-size:12px; margin-bottom:6px; color:#444;">
+        Tab fuer Aufnahme auswaehlen
+      </label>
+      <select id="gb-gif-tab-select" style="
+        width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;
+        margin-bottom:8px; font-size:12px;
+      "></select>
+      <button id="gb-gif-start-btn" style="
+        width:100%; padding:8px; background:#27ae60; color:white;
+        border:none; border-radius:4px; cursor:pointer; font-size:14px;
+      ">
+        ▶ Aufnahme starten
+      </button>
+      <div style="font-size:11px; color:#888; margin-top:6px;">
+        Standard ist der zuletzt genutzte Tab (Fallback: erster Tab).<br>
+        Maximal <strong>60 Sekunden</strong> Aufnahme; zusaetzlich Stopp nach 30 s Inaktivitaet.
+      </div>
+      <label for="gb-open-editor-tab-after-recording" style="display:flex; align-items:flex-start; gap:8px; font-size:12px; margin-top:10px; cursor:pointer; color:#333;">
+        <input type="checkbox" id="gb-open-editor-tab-after-recording" style="margin-top:2px; flex-shrink:0;"/>
+        <span>Editor-Tab nach Aufnahme öffnen (GIF-Vorschau). Aus = Hintergrund (Odoo-Modal: Standard aus; Popup: Standard an, bis Sie hier ändern).</span>
+      </label>
+    </div>
+
+    <!-- Läuft-Zustand (initial versteckt) -->
+    <div id="gb-gif-running" style="display:none;">
+      <div id="gb-gif-counter" style="
+        font-size:13px; color:#333; margin-bottom:8px;
+        font-variant-numeric: tabular-nums;
+      ">
+        Frames: 0 | Dauer: 0s | Restzeit: 60s (max. 60s)
+      </div>
+      <button id="gb-gif-stop-btn" style="
+        width:100%; padding:8px; background:#e74c3c; color:white;
+        border:none; border-radius:4px; cursor:pointer; font-size:14px;
+      ">
+        ⏹ Manuell stoppen
+      </button>
+    </div>
+
+    <!-- Verarbeitung-Zustand (initial versteckt) -->
+    <div id="gb-gif-processing" style="display:none;">
+      <div class="gb-gif-processing-main" style="font-size:13px; color:#888;">
+        ⏳ GIF wird erstellt — bitte warten…
+      </div>
+    </div>
+
+    <!-- Fertig-Zustand (initial versteckt) -->
+    <div id="gb-gif-done" style="display:none;">
+      <div style="font-size:13px; color:#27ae60;">
+        ✓ Wartet auf Task-Save in Odoo
+      </div>
+    </div>
+
+    <!-- Fehler-Zustand (initial versteckt) -->
+    <div id="gb-gif-error" style="display:none; color:#e74c3c; font-size:13px;">
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
