@@ -2,7 +2,7 @@
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
   <app appid='dncaodcephhbfaajmlkophikkknnlagk'>
     <updatecheck
-      codebase='https://raw.githubusercontent.com/Gahrens-Battermann-GmbH-Co-KG/extension_odoo_tab_record/main/gb-feedback-widget-extension_v2.0.1.crx'
-      version='2.0.1' />
+      codebase='https://raw.githubusercontent.com/Gahrens-Battermann-GmbH-Co-KG/extension_odoo_tab_record/main/gb-feedback-widget-extension_v2.0.2.crx'
+      version='2.0.2' />
   </app>
 </gupdate>
